@@ -1,0 +1,10 @@
+File Path
+(broker/src/provers/default.rs)
+
+
+
+//////////////////
+Explanation of Code:
+This compact run_check method replaces the old, multi-step preflight function with a streamlined, unified design. By default, it performs all validation checks to ensure that both the image and input are valid before proof execution. However, if the skip flag is enabled, it allows authorized users (validated via token) to bypass these preflight checks. Each bypass or execution event is logged in an audit list to maintain transparency and traceability.
+
+The code achieves a clean balance between security and flexibility. Unauthorized skipping is impossible without a valid token, ensuring control remains with trusted operators. Meanwhile, the minimal logic and strong audit trail keep the system lightweight yet accountable — ideal for production use where performance and verification integrity both matter. It replaces roughly 80 lines of old logic with just ~45 efficient lines.
