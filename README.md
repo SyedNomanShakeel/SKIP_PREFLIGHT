@@ -48,7 +48,7 @@ impl Prover {
             }
         }
 
-     //      Step 2: register and execute proof
+     //      Step: register and execute proof
         
   let id = format!("proof-{}", Uuid::new_v4());
         self.proofs.write().await.insert(id.clone(), ());
